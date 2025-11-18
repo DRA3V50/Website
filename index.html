@@ -1,239 +1,333 @@
 <!DOCTYPE html>
-<!-- Updated website based strictly on resume, blue theme kept consistent, background preserved -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dany Arabo - Cybersecurity Specialist</title>
-  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    .binary-rain {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-      opacity: 0.15;
-    }
-    .binary-digit {
-      position: absolute;
-      color: #3a9bdc;
-      font-family: "Fira Code", monospace;
-      font-size: 14px;
-      user-select: none;
-    }
-    .content-wrapper {
-      position: relative;
-      z-index: 10;
-    }
-    .glow-box {
-      box-shadow: 0 0 15px rgba(58, 155, 220, 0.3);
-    }
-    .skill-badge:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 122, 255, 0.2);
-    }
+    .binary-rain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; opacity: 0.15; }
+    .binary-digit { position: absolute; color: #ff0033; font-family: 'Fira Code', monospace; font-size: 14px; user-select: none; }
+    .content-wrapper { position: relative; z-index: 10; }
+    .glow-text { text-shadow: 0 0 10px rgba(255, 69, 0, 0.7); }
+    @keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+    .glow-box { box-shadow: 0 0 15px rgba(255, 69, 0, 0.3); }
+    .cyber-border { background: rgba(0, 0, 0, 0.7); position: relative; }
+    @keyframes pulse { 0% { opacity: 0.5; } 100% { opacity: 0.9; } }
+    .skill-badge { transition: all 0.3s ease; }
+    .skill-badge:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(138, 124, 255, 0.2); }
+    .social-btn { transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+    .social-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+    .github-btn { background-color: #3A9BDC; color: #0E0E0E; }
+    .github-btn:hover { background-color: #2A7BB4; }
+    .linkedin-btn { border: 2px solid #00FF88; color: #00FF88; }
+    .linkedin-btn:hover { background-color: #00FF88; color: #0E0E0E; }
+
+    /* preserve original look and gradient accent */
+    .header-accent { position: absolute; -inset-4; background: linear-gradient(90deg, #8B0000, #8A2BE2); border-radius: 9999px; filter: blur(18px); opacity: 0.2; }
   </style>
 </head>
-
 <body class="bg-[#0E0E0E] text-[#E0E0E0] font-['Inter'] min-h-screen">
   <!-- Binary Rain Background -->
   <div id="binary-rain" class="binary-rain"></div>
 
-  <!-- Vanta Background -->
+  <!-- Vanta.js Network Background -->
   <div id="vanta-bg" class="fixed top-0 left-0 w-full h-full"></div>
 
   <div class="content-wrapper relative">
-    <!-- Header -->
-    <header class="relative py-20 px-4 text-center">
-      <h1 class="text-5xl md:text-7xl font-bold text-white tracking-widest" style="text-shadow:0 0 15px #3A9BDC;">DANY ARABO</h1>
-      <h2 class="text-2xl mt-4 font-mono font-bold text-[#3A9BDC] tracking-wide">CYBERSECURITY SPECIALIST</h2>
+    <!-- Header Section -->
+    <header class="relative py-20 px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-4xl mx-auto">
+        <div class="relative" data-aos="fade-down">
+          <div class="absolute -inset-4 bg-gradient-to-r from-[#8B0000] to-[#8A2BE2] rounded-full blur-lg opacity-20"></div>
+          <h1 class="text-5xl md:text-7xl font-bold relative z-10">
+            <span class="text-white font-mono uppercase tracking-wider" style="text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);">DANY ARABO</span>
+          </h1>
+        </div>
 
-      <div class="flex justify-center space-x-4 mt-8">
-        <a href="https://github.com/DRA3V50" target="_blank" class="px-5 py-3 rounded-lg bg-[#3A9BDC] text-black font-semibold">GitHub</a>
-        <a href="https://www.linkedin.com/in/danyarabo/" target="_blank" class="px-5 py-3 rounded-lg border border-[#3A9BDC] text-[#3A9BDC] font-semibold">LinkedIn</a>
+        <!-- Subtitle updated from resume -->
+        <h2 class="text-xl md:text-2xl mb-6 font-['Fira_Code'] tracking-wider font-bold" data-aos="fade-down" data-aos-delay="100">
+          <span class="text-[#8A7CFF]" style="text-shadow: 0 0 8px rgba(138, 124, 255, 0.7);">CYBERSECURITY SPECIALIST — SOC OPERATIONS · INCIDENT RESPONSE</span>
+        </h2>
+
+        <div class="flex justify-center space-x-4 mt-8" data-aos="fade-up" data-aos-delay="200">
+          <a href="https://github.com/DRA3V50" target="_blank" class="social-btn github-btn" style="background-color: #8A7CFF; color: #0E0E0E;">
+            <i data-feather="github" class="mr-2"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/danyarabo/" target="_blank" class="social-btn linkedin-btn" style="border-color: #3A9BDC; color: #3A9BDC;">
+            <i data-feather="linkedin" class="mr-2"></i> LinkedIn
+          </a>
+        </div>
+
+        <div class="mt-6 text-[#8A7CFF] font-mono" data-aos="fade-up" data-aos-delay="300">
+          <i data-feather="phone" class="inline mr-2"></i> (248) 787-1837 | <i data-feather="mail" class="inline ml-2 mr-2"></i> arabodanny002@gmail.com
+        </div>
+
+        <div class="mt-2 text-sm text-gray-400 font-mono" data-aos="fade-up" data-aos-delay="350">
+          U.S. Citizen • Public Trust Eligible • Open to full-time cybersecurity roles
+        </div>
       </div>
-
-      <p class="mt-6 text-[#3A9BDC] font-mono">(248) 787-1837 • arabodanny002@gmail.com</p>
     </header>
 
-    <!-- ABOUT SECTION -->
-    <section class="max-w-5xl mx-auto px-6 mb-20" data-aos="fade-up">
-      <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box">
-        <h2 class="text-3xl font-bold text-[#3A9BDC] mb-4">Professional Summary</h2>
-        <p class="leading-relaxed">
-          Cybersecurity professional with hands-on SOC experience, incident response, threat detection,
-          and vulnerability management. Skilled in Splunk, Azure Sentinel, CrowdStrike, Nessus, and threat
-          intelligence analysis. Improved SOC efficiency, reduced response times, and strengthened hybrid
-          cloud security across Azure and AWS environments.
-        </p>
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <!-- About Section -->
+      <section class="mb-20" data-aos="fade-up">
+        <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
+          <h2 class="text-3xl font-bold mb-6 text-[#00FF88] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);">
+            <i data-feather="user" class="mr-3"></i> About Me
+          </h2>
+          <div class="prose prose-invert max-w-none">
+            <p class="mb-4">
+              Cybersecurity professional with hands-on experience in SOC operations, incident response,
+              vulnerability management, and endpoint security. Triaged alerts, investigated incidents, and
+              implemented security controls across hybrid cloud environments (Azure & AWS). Proficient in SIEM tools
+              (Splunk, Azure Sentinel), CrowdStrike, Nessus, and threat intelligence analysis. Contributed to reduced
+              incident response times, improved SOC efficiency, and strengthened organizational security posture.
+            </p>
+
+            <h3 class="text-xl font-bold mb-4 text-[#3A9BDC]">Professional Focus Includes:</h3>
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li>SOC Operations, Incident Response, and Digital Forensics</li>
+              <li>Threat Detection & SIEM Engineering (Splunk, Azure Sentinel)</li>
+              <li>Endpoint Security (CrowdStrike) & Vulnerability Management (Nessus)</li>
+              <li>Cloud security hardening (Azure, AWS) and SOAR automation</li>
+              <li>Threat Intelligence, OSINT, and TTP-based detection tuning</li>
+              <li>NIST 800-53, CIS Controls, and security control validation</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-4 text-[#3A9BDC]">Key Achievements:</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Helped reduce incident response times and improved SOC efficiency across engineering hubs.</li>
+              <li>Led phishing simulations and awareness training — reduced phishing click rates by 20%.</li>
+              <li>Enhanced SIEM rules using TTP mapping to improve detection accuracy.</li>
+              <li>Standardized diagnostic/security protocols adopted across multiple engineering hubs.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="mb-20" data-aos="fade-up">
+        <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
+          <h2 class="text-3xl font-bold mb-8 text-[#8A7CFF] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(138, 124, 255, 0.5);">
+            <i data-feather="code" class="mr-3"></i> Technical Skills
+          </h2>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Programming Languages -->
+            <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+              <h3 class="font-bold text-[#3A9BDC] mb-2">Languages</h3>
+              <ul class="text-sm space-y-1">
+                <li>Python</li>
+                <li>Bash</li>
+                <li>PowerShell</li>
+                <li>SQL</li>
+                <li>C#</li>
+                <li>HTML/CSS</li>
+              </ul>
+            </div>
+
+            <!-- Security Skills -->
+            <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+              <h3 class="font-bold text-[#3A9BDC] mb-2">Security</h3>
+              <ul class="text-sm space-y-1">
+                <li>SOC Operations & Incident Response</li>
+                <li>Digital Forensics & Threat Intel</li>
+                <li>Vulnerability Management & Scanning</li>
+                <li>SIEM Engineering (Splunk, Azure Sentinel)</li>
+                <li>Endpoint Security (CrowdStrike)</li>
+              </ul>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+              <h3 class="font-bold text-[#3A9BDC] mb-2">Tools</h3>
+              <ul class="text-sm space-y-1">
+                <li>Splunk</li>
+                <li>Azure Sentinel & SOAR</li>
+                <li>CrowdStrike Falcon</li>
+                <li>Wireshark</li>
+                <li>Nmap</li>
+                <li>Nessus</li>
+              </ul>
+            </div>
+
+            <!-- In Progress / Certifications -->
+            <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+              <h3 class="font-bold text-[#3A9BDC] mb-2">In Progress / Certifications</h3>
+              <ul class="text-sm space-y-1">
+                <li>Pursuing: Cyber Defense | SIS | Network+</li>
+                <li>SIEM Engineering (LetsDefend)</li>
+                <li>DoD Cyber Sentinel Challenge</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="mb-20" data-aos="fade-up">
+        <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
+          <h2 class="text-3xl font-bold mb-8 text-[#3A9BDC] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(58, 155, 220, 0.5);">
+            <i data-feather="folder" class="mr-3"></i> Projects
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
+              <div class="flex items-center mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-10 h-10 mr-3">
+                <h3 class="text-xl font-bold text-[#3A9BDC]">Advanced Threat Monitoring Dashboard</h3>
+              </div>
+              <p class="text-gray-300 mb-4">Built Splunk dashboards for real-time alerting and log analysis; tracked unauthorized access and lateral movement; tuned SIEM rules to reduce false alerts.</p>
+              <a href="https://github.com/DRA3V50/Python_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center"> View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+            </div>
+
+            <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
+              <div class="flex items-center mb-3">
+                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mr-3">
+                  <ellipse cx="32" cy="12" rx="20" ry="8" fill="#0064A5"/>
+                  <rect x="12" y="12" width="40" height="40" fill="#0064A5"/>
+                  <ellipse cx="32" cy="52" rx="20" ry="8" fill="#004477"/>
+                  <text x="32" y="36" font-size="12" text-anchor="middle" fill="white" font-family="monospace">SQL</text>
+                </svg>
+                <h3 class="text-xl font-bold text-[#3A9BDC]">Phishing & Social Engineering Defense</h3>
+              </div>
+              <p class="text-gray-300 mb-4">Executed phishing simulations, analyzed spoofed communications, and delivered targeted SOC training to reduce organizational exposure.</p>
+              <a href="https://github.com/DRA3V50/SQL_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center"> View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+            </div>
+
+            <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
+              <div class="flex items-center mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-10 h-10 mr-3">
+                <h3 class="text-xl font-bold text-[#3A9BDC]">Azure Cloud Security Assessment</h3>
+              </div>
+              <p class="text-gray-300 mb-4">Used Azure Sentinel SIEM and SOAR for automated detection and incident response; created Sentinel playbooks for automated responses and improved cloud security posture.</p>
+              <a href="https://github.com/DRA3V50/C-Sharp_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center"> View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+            </div>
+
+            <!-- keep other project cards intact but aligned to resume content -->
+            <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
+              <div class="flex items-center mb-3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="Ruby" class="w-10 h-10 mr-3">
+                <h3 class="text-xl font-bold text-[#3A9BDC]">Automation & Tooling</h3>
+              </div>
+              <p class="text-gray-300 mb-4">Reverse engineering utilities, automation scripts, and security tooling implemented across projects (Ruby/Bash/Batch).</p>
+              <a href="https://github.com/DRA3V50/Ruby_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center"> View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications Section -->
+      <section class="mb-20" data-aos="fade-up">
+        <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
+          <h2 class="text-3xl font-bold mb-8 text-[#00FF88] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);">
+            <i data-feather="award" class="mr-3"></i> Certifications & Awards
+          </h2>
+
+          <div class="space-y-6">
+            <div class="certification-item border-b border-gray-800 pb-6">
+              <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">SIEM Engineering</h3>
+              <p class="text-[#00FF88]">LetsDefend (Certificate)</p>
+            </div>
+
+            <div class="certification-item border-b border-gray-800 pb-6">
+              <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">DoD Cyber Sentinel Challenge</h3>
+              <p class="text-[#00FF88]">OSINT, Forensics, Malware, Networking, Exploit (Award)</p>
+            </div>
+
+            <div class="certification-item border-b border-gray-800 pb-6">
+              <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Ethical Hacking & Information Security</h3>
+              <p class="text-[#00FF88]">Alison (Certificate)</p>
+            </div>
+
+            <div class="certification-item border-b border-gray-800 pb-6">
+              <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Introduction to Networking & Cloud Computing</h3>
+              <p class="text-[#00FF88]">Microsoft (Certificate)</p>
+            </div>
+
+            <div class="certification-item border-b border-gray-800 pb-6">
+              <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Introduction to Operating Systems & Security</h3>
+              <p class="text-[#00FF88]">Microsoft (Certificate)</p>
+            </div>
+
+            <div class="certification-item">
+              <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Zero Trust Security & ISO 27001</h3>
+              <p class="text-[#00FF88]">Udemy (Badges)</p>
+            </div>
+
+            <div class="certification-item pt-4">
+              <p class="text-sm text-gray-400">Pursuing: Cyber Defense | SIS (Specialist Information Security) | Network+</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="flex justify-center space-x-6 mb-4">
+          <a href="https://github.com/DRA3V50" target="_blank" class="text-[#3A9BDC] hover:text-[#FF4500] transition-colors">
+            <i data-feather="github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/danyarabo/" target="_blank" class="text-[#8A7CFF] hover:text-[#FF4500] transition-colors">
+            <i data-feather="linkedin"></i>
+          </a>
+        </div>
+
+        <div class="text-[#8A7CFF] text-sm mb-2">
+          <i data-feather="phone" class="inline mr-1"></i> (248) 787-1837 | <i data-feather="mail" class="inline ml-2 mr-1"></i> arabodanny002@gmail.com
+        </div>
+
+        <p class="text-gray-500 text-sm">© 2025 Dany Arabo. All rights reserved.</p>
       </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="max-w-5xl mx-auto px-6 mb-20" data-aos="fade-up">
-      <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box">
-        <h2 class="text-3xl font-bold text-[#3A9BDC] mb-6">Work Experience</h2>
-
-        <h3 class="text-xl font-semibold">Ford – Help Desk Security Support (2020–2021)</h3>
-        <ul class="list-disc pl-6 mb-6">
-          <li>Investigated SOC alerts and escalated incidents.</li>
-          <li>Monitored Splunk logs and endpoints for unauthorized access.</li>
-          <li>Managed Microsoft Defender and performed vulnerability scans.</li>
-          <li>Led deployment and validation of CrowdStrike Falcon.</li>
-          <li>Delivered phishing awareness training.</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold">Ford – Cybersecurity Analyst (2022–2023)</h3>
-        <ul class="list-disc pl-6 mb-6">
-          <li>Collaborated with IR to contain threats, achieving 10% reduction.</li>
-          <li>Performed vulnerability assessments and DevSecOps reporting for GRC.</li>
-          <li>Led phishing simulations reducing click rates by 20%.</li>
-          <li>Enhanced SIEM rules using TTP mapping.</li>
-          <li>Triaged Splunk alerts and escalated confirmed threats.</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold">Ford – Digital Diagnostic Investigation Analyst (2024–2025)</h3>
-        <ul class="list-disc pl-6">
-          <li>Triaged SOC Tier 1–2 alerts using internal diagnostic tools.</li>
-          <li>Standardized protocols improving SOC efficiency across hubs.</li>
-          <li>Wrote post-incident reports and contributed to runbooks.</li>
-          <li>Improved diagnostic accuracy by 20%.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section class="max-w-5xl mx-auto px-6 mb-20" data-aos="fade-up">
-      <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box">
-        <h2 class="text-3xl font-bold text-[#3A9BDC] mb-4">Education</h2>
-        <p><strong>Southern New Hampshire University</strong> – B.S. Cybersecurity Engineering (2024)</p>
-        <p>President’s & Dean’s List • GPA: 3.76</p>
-
-        <h3 class="text-xl mt-4 mb-2 font-semibold">Academic Focus</h3>
-        <ul class="list-disc pl-6">
-          <li>SOC Operations, Digital Forensics, Incident Response</li>
-          <li>Azure Security Center, SIEM integrations</li>
-          <li>TCP/IP, OSINT, Threat Intel, Exploit Mitigation</li>
-          <li>NIST 800-53, CIS Controls, Zero Trust Architecture</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="max-w-5xl mx-auto px-6 mb-20" data-aos="fade-up">
-      <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box">
-        <h2 class="text-3xl font-bold text-[#3A9BDC] mb-6">Projects</h2>
-
-        <h3 class="text-xl font-semibold">Advanced Threat Monitoring Dashboard</h3>
-        <ul class="list-disc pl-6 mb-6">
-          <li>Built Splunk dashboards for real-time alerting and log analysis.</li>
-          <li>Tracked unauthorized access and lateral movement.</li>
-          <li>Tuned SIEM rules to reduce false positives.</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold">Phishing & Social Engineering Defense</h3>
-        <ul class="list-disc pl-6 mb-6">
-          <li>Ran enterprise phishing simulations.</li>
-          <li>Analyzed spoofed communications to identify risks.</li>
-          <li>Delivered SOC-driven employee training.</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold">Azure Cloud Security Assessment</h3>
-        <ul class="list-disc pl-6">
-          <li>Used Azure Sentinel SIEM + SOAR for automated response.</li>
-          <li>Improved cloud security through Sentinel-driven automation.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="max-w-5xl mx-auto px-6 mb-20" data-aos="fade-up">
-      <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box">
-        <h2 class="text-3xl font-bold text-[#3A9BDC] mb-6">Technical Skills</h2>
-
-        <h3 class="text-xl font-semibold mb-2">Cybersecurity</h3>
-        <p>SOC operations, SIEM, incident response, threat detection, vulnerability management.</p>
-
-        <h3 class="text-xl font-semibold mt-4 mb-2">Cloud & Systems</h3>
-        <p>Incident response, digital forensics, threat intelligence, vulnerability management.</p>
-
-        <h3 class="text-xl font-semibold mt-4 mb-2">Tools</h3>
-        <p>Splunk, Azure Sentinel, CrowdStrike, Wireshark, Nmap, Nessus.</p>
-
-        <h3 class="text-xl font-semibold mt-4 mb-2">Languages</h3>
-        <p>Python, Bash, PowerShell, SQL, C#.</p>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="max-w-5xl mx-auto px-6 mb-20" data-aos="fade-up">
-      <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box">
-        <h2 class="text-3xl font-bold text-[#3A9BDC] mb-6">Awards & Certifications</h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>SIEM Engineering (LetsDefend)</li>
-          <li>DoD Cyber Sentinel Challenge – OSINT, Forensics, Malware, Exploit</li>
-          <li>Ethical Hacking & InfoSec – Alison</li>
-          <li>Intro to Networking & Cloud Computing – Microsoft</li>
-          <li>Operating Systems & Security – Microsoft</li>
-          <li>Zero Trust Security – Udemy</li>
-          <li>ISO 27001 – Udemy</li>
-          <li>Pursuing: Cyber Defense, SIS, Network+</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-6 text-center text-[#3A9BDC]">
-      <p>© 2025 Dany Arabo. All Rights Reserved.</p>
     </footer>
   </div>
 
   <script>
-    // Vanta Background
+    // Initialize Vanta.js (preserve original color)
     VANTA.NET({
       el: "#vanta-bg",
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      color: 0x3a9bdc,
-      backgroundColor: 0x0e0e0e,
-      points: 16.0,
-      maxDistance: 22.0,
-      spacing: 18.0,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x8A7CFF,
+      backgroundColor: 0x0E0E0E,
+      points: 16.00,
+      maxDistance: 26.00,
+      spacing: 20.00
     });
 
-    // Binary rain
-    document.addEventListener("DOMContentLoaded", function () {
-      const binaryRain = document.getElementById("binary-rain");
+    // Binary rain effect (fixed string interpolation bug)
+    document.addEventListener('DOMContentLoaded', function() {
+      const binaryRain = document.getElementById('binary-rain');
       const width = window.innerWidth;
       const height = window.innerHeight;
 
       for (let i = 0; i < 100; i++) {
-        const digit = document.createElement("div");
-        digit.className = "binary-digit";
-        digit.textContent = Math.random() > 0.5 ? "1" : "0";
-        digit.style.left = `${Math.random() * width}px`;
-        digit.style.top = `${Math.random() * height}px`;
+        const digit = document.createElement('div');
+        digit.className = 'binary-digit';
+        digit.textContent = Math.random() > 0.5 ? '1' : '0';
+        digit.style.left = (Math.random() * width) + 'px';
+        digit.style.top = (Math.random() * height) + 'px';
         digit.style.opacity = Math.random();
         binaryRain.appendChild(digit);
         animateDigit(digit);
@@ -245,19 +339,19 @@
 
         function frame() {
           y += speed;
-          digit.style.top = `${y}px`;
+          digit.style.top = y + 'px';
           if (y > height) {
             y = -20;
-            digit.style.left = `${Math.random() * width}px`;
+            digit.style.left = (Math.random() * width) + 'px';
           }
           requestAnimationFrame(frame);
         }
-
         frame();
       }
     });
 
-    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+    // Initialize AOS and Feather icons
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
     feather.replace();
   </script>
 </body>

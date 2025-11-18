@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dany Arabo - Cybersecurity & Mechanical Engineer</title>
+    <title>Dany Arabo - Cybersecurity Specialist</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,448 +15,293 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        .binary-rain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-            opacity: 0.15;
-        }
-        .binary-digit {
-            position: absolute;
-            color: #ff0033;
-            font-family: 'Fira Code', monospace;
-            font-size: 14px;
-            user-select: none;
-        }
-        .content-wrapper {
-            position: relative;
-            z-index: 10;
-        }
-        .glow-text {
-            text-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
-        }
-        @keyframes spin-slow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-            animation: spin-slow 20s linear infinite;
-        }
-        .glow-box {
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.3);
-        }
-        .cyber-border {
-            background: rgba(0, 0, 0, 0.7);
-            position: relative;
-        }
-        @keyframes pulse {
-            0% { opacity: 0.5; }
-            100% { opacity: 0.9; }
-        }
-        .skill-badge {
-            transition: all 0.3s ease;
-        }
-        .skill-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(138, 124, 255, 0.2);
-        }
-        .social-btn {
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        .github-btn {
-            background-color: #3A9BDC;
-            color: #0E0E0E;
-        }
-        .github-btn:hover {
-            background-color: #2A7BB4;
-        }
-        .linkedin-btn {
-            border: 2px solid #00FF88;
-            color: #00FF88;
-        }
-        .linkedin-btn:hover {
-            background-color: #00FF88;
-            color: #0E0E0E;
-        }
+        .binary-rain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; opacity: 0.15; }
+        .binary-digit { position: absolute; color: #ff0033; font-family: 'Fira Code', monospace; font-size: 14px; user-select: none; }
+        .content-wrapper { position: relative; z-index: 10; }
+        .glow-text { text-shadow: 0 0 10px rgba(255, 69, 0, 0.7); }
+        @keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+        .glow-box { box-shadow: 0 0 15px rgba(255, 69, 0, 0.3); }
+        .cyber-border { background: rgba(0, 0, 0, 0.7); position: relative; }
+        @keyframes pulse { 0% { opacity: 0.5; } 100% { opacity: 0.9; } }
+        .skill-badge { transition: all 0.3s ease; }
+        .skill-badge:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(138, 124, 255, 0.2); }
+        .social-btn { transition: all 0.3s ease; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+        .social-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
     </style>
 </head>
+
 <body class="bg-[#0E0E0E] text-[#E0E0E0] font-['Inter'] min-h-screen">
-    <!-- Binary Rain Background -->
+    
+    <!-- Background Effects -->
     <div id="binary-rain" class="binary-rain"></div>
-    
-    <!-- Vanta.js Network Background -->
     <div id="vanta-bg" class="fixed top-0 left-0 w-full h-full"></div>
-    
+
     <div class="content-wrapper relative">
-        <!-- Header Section -->
-        <header class="relative py-20 px-4 sm:px-6 lg:px-8 text-center">
-            <div class="max-w-4xl mx-auto">
-                <div class="relative" data-aos="fade-down">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[#8B0000] to-[#8A2BE2] rounded-full blur-lg opacity-20"></div>
-                    <h1 class="text-5xl md:text-7xl font-bold relative z-10">
-                        <span class="text-white font-mono uppercase tracking-wider" style="text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);">DANY ARABO</span>
-                    </h1>
-                </div>
-                <h2 class="text-xl md:text-2xl mb-6 font-['Fira_Code'] tracking-wider font-bold" data-aos="fade-down" data-aos-delay="100">
-                    <span class="text-[#8A7CFF]" style="text-shadow: 0 0 8px rgba(138, 124, 255, 0.7);">CYBERSECURITY ENGINEER</span>
+
+        <!-- HEADER -->
+        <header class="relative py-20 px-4 text-center">
+            <div class="max-w-4xl mx-auto" data-aos="fade-down">
+
+                <h1 class="text-5xl md:text-7xl font-bold text-white font-mono uppercase tracking-wider" 
+                    style="text-shadow: 0 0 10px rgba(255,0,0,0.7),0 0 20px rgba(255,255,255,0.5);">
+                    DANY ARABO
+                </h1>
+
+                <h2 class="text-xl md:text-2xl mt-4 mb-6 font-['Fira_Code'] tracking-wider font-bold text-[#8A7CFF]"
+                    style="text-shadow: 0 0 8px rgba(138,124,255,0.7);">
+                    CYBERSECURITY SPECIALIST | SOC OPERATIONS | INCIDENT RESPONSE
                 </h2>
-                <div class="flex justify-center space-x-4 mt-8" data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://github.com/DRA3V50" target="_blank" class="social-btn github-btn" style="background-color: #8A7CFF; color: #0E0E0E;">
+
+                <div class="flex justify-center space-x-4 mt-8">
+                    <a href="https://github.com/DRA3V50" class="social-btn github-btn" style="background-color:#8A7CFF;color:#0E0E0E;">
                         <i data-feather="github" class="mr-2"></i> GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/danyarabo/" target="_blank" class="social-btn linkedin-btn" style="border-color: #3A9BDC; color: #3A9BDC;">
+                    <a href="https://www.linkedin.com/in/danyarabo/" class="social-btn linkedin-btn" style="border-color:#3A9BDC;color:#3A9BDC;">
                         <i data-feather="linkedin" class="mr-2"></i> LinkedIn
                     </a>
                 </div>
-                <div class="mt-6 text-[#8A7CFF] font-mono" data-aos="fade-up" data-aos-delay="300">
-                    <i data-feather="phone" class="inline mr-2"></i> (248) 787-1837 | 
+
+                <div class="mt-6 text-[#8A7CFF] font-mono">
+                    <i data-feather="phone" class="inline mr-2"></i> (248) 787-1837 |
                     <i data-feather="mail" class="inline ml-2 mr-2"></i> arabodanny002@gmail.com
                 </div>
+
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-            <!-- About Section -->
+        <!-- ABOUT -->
+        <main class="max-w-6xl mx-auto px-4 pb-20">
+
             <section class="mb-20" data-aos="fade-up">
-                <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
-                    <h2 class="text-3xl font-bold mb-6 text-[#00FF88] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);">
+                <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box cyber-border">
+
+                    <h2 class="text-3xl font-bold mb-6 text-[#00FF88] font-['Fira_Code'] flex items-center">
                         <i data-feather="user" class="mr-3"></i> About Me
                     </h2>
-                    <div class="prose prose-invert max-w-none">
-                        <p class="mb-4">
-                            Cybersecurity engineering specialist and Public Trust Eligible U.S. citizen with demonstrated expertise in SOC operations, digital forensics, threat intelligence, and secure systems design.
-                        </p>
 
-                        <h3 class="text-xl font-bold mb-4 text-[#3A9BDC]">Professional Focus Includes:</h3>
+                    <p class="mb-4">
+                        Cybersecurity professional with hands-on experience in SOC operations, incident response,
+                        endpoint security, and vulnerability management. I have supported enterprise environments at Ford,
+                        triaging Tier 1–2 alerts, improving SIEM detection rules, deploying CrowdStrike agents, and
+                        assisting IR teams with containment and remediation.
+                    </p>
 
-                        <ul class="list-disc pl-6 mb-6 space-y-2">
-                            <li>Advanced Network Defense, Digital Forensics, and Incident Response</li>
-                            <li>Adversarial Strategy and Tactics, including Red/Blue Team methodologies</li>
-                            <li>Cloud Infrastructure Hardening and Security (Microsoft Azure, Hybrid Cloud)</li>
-                            <li>TCP/IP Protocols, OSINT Reconnaissance, Threat Intelligence, and Exploit Mitigation</li>
-                            <li>Security Control Validation, Zero Trust Architecture, and Secure Systems Design</li>
-                            <li>NIST 800-53, CIS Controls, and Real-World Attack Simulations</li>
-                        </ul>
+                    <h3 class="text-xl font-bold mb-4 text-[#3A9BDC]">Professional Focus Includes:</h3>
+                    <ul class="list-disc pl-6 space-y-2 mb-6">
+                        <li>SOC Operations, Alert Triage, Threat Detection</li>
+                        <li>Digital Forensics & Incident Response Support</li>
+                        <li>Hybrid Cloud Security (Azure, AWS)</li>
+                        <li>Vulnerability Scanning & Remediation Workflows</li>
+                        <li>Threat Intelligence & MITRE ATT&CK Mapping</li>
+                        <li>NIST 800-53, CIS Controls, Zero Trust</li>
+                    </ul>
 
-                        <h3 class="text-xl font-bold mb-4 text-[#3A9BDC]">Cybersecurity Operations:</h3>
-
-                        <ul class="list-disc pl-6 mb-6 space-y-2">
-                            <li>SOC Operations, SIEM (Splunk), Threat Detection</li>
-                            <li>Vulnerability Management, IDS/IPS, Root Cause Analysis</li>
-                            <li>Threat Modeling and Adversary TTP Analysis</li>
-                        </ul>
-
-                        <h3 class="text-xl font-bold mb-4 text-[#3A9BDC]">Key Achievements:</h3>
-
-                        <ul class="list-disc pl-6 space-y-2">
-                            <li>Spearheaded scalable security initiatives across hybrid cloud environments (Azure)</li>
-                            <li>Orchestrated multiple Red Team exercises, reducing vulnerability exposure by 30%</li>
-                            <li>Executed thorough vulnerability assessments to fortify enterprise defenses</li>
-                            <li>Proficient in Splunk, CrowdStrike, Azure Sentinel, and security automation</li>
-                        </ul>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-[#3A9BDC]">Key Achievements:</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Reduced SOC false positives and improved detection accuracy</li>
+                        <li>Led deployment of CrowdStrike Falcon agents across teams</li>
+                        <li>Improved phishing simulation reporting and cut click rates by 20%</li>
+                        <li>Standardized SOC diagnostic procedures across engineering hubs</li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- Skills Section -->
+            <!-- SKILLS -->
             <section class="mb-20" data-aos="fade-up">
-                <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
-                    <h2 class="text-3xl font-bold mb-8 text-[#8A7CFF] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(138, 124, 255, 0.5);">
+                <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box cyber-border">
+
+                    <h2 class="text-3xl font-bold mb-8 text-[#8A7CFF] font-['Fira_Code'] flex items-center">
                         <i data-feather="code" class="mr-3"></i> Technical Skills
                     </h2>
+
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <!-- Programming Languages -->
-                        <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+
+                        <div class="skill-badge bg-[#111827] p-4 rounded-lg border border-[#1E293B]">
                             <h3 class="font-bold text-[#3A9BDC] mb-2">Languages</h3>
                             <ul class="text-sm space-y-1">
                                 <li>Python</li>
-                                <li>C#</li>
-                                <li>Ruby</li>
+                                <li>Bash</li>
+                                <li>PowerShell</li>
                                 <li>SQL</li>
-                                <li>Batch</li>
+                                <li>C#</li>
                                 <li>HTML/CSS</li>
                             </ul>
                         </div>
-                        
-                        <!-- Security Skills -->
-                        <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+
+                        <div class="skill-badge bg-[#111827] p-4 rounded-lg border border-[#1E293B]">
                             <h3 class="font-bold text-[#3A9BDC] mb-2">Security</h3>
                             <ul class="text-sm space-y-1">
-                                <li>Network Defense & Forensics</li>
-                                <li>Red/Blue Team Tactics</li>
-                                <li>Cloud Security (Azure)</li>
+                                <li>SOC Operations</li>
+                                <li>Splunk & Sentinel SIEM</li>
+                                <li>Incident Response</li>
                                 <li>Threat Intelligence</li>
+                                <li>Cloud Security (Azure)</li>
                                 <li>Zero Trust Architecture</li>
-                                <li>NIST 800-53 & CIS Controls</li>
                             </ul>
                         </div>
-                        
-                        <!-- Tools -->
-                        <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+
+                        <div class="skill-badge bg-[#111827] p-4 rounded-lg border border-[#1E293B]">
                             <h3 class="font-bold text-[#3A9BDC] mb-2">Tools</h3>
                             <ul class="text-sm space-y-1">
-                                <li>Metasploit</li>
+                                <li>Splunk SIEM</li>
+                                <li>CrowdStrike EDR</li>
+                                <li>Microsoft Defender</li>
                                 <li>Wireshark</li>
-                                <li>Burp Suite</li>
                                 <li>Nmap</li>
-                                <li>Git</li>
+                                <li>Nessus</li>
                             </ul>
                         </div>
-                        
-                        <!-- In Progress -->
-                        <div class="skill-badge bg-[#111827] rounded-lg p-4 border border-[#1E293B] hover:border-[#00BFFF]">
+
+                        <div class="skill-badge bg-[#111827] p-4 rounded-lg border border-[#1E293B]">
                             <h3 class="font-bold text-[#3A9BDC] mb-2">In Progress</h3>
                             <ul class="text-sm space-y-1">
-                                <li>CSSP Certification</li>
-                                <li>CISA Certification</li>
-                                <li>Embedded C</li>
+                                <li>Security+</li>
+                                <li>Network+</li>
+                                <li>Cyber Defense SIS</li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </section>
 
-            <!-- Projects Section -->
+            <!-- PROJECTS -->
             <section class="mb-20" data-aos="fade-up">
-                <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
-                    <h2 class="text-3xl font-bold mb-8 text-[#3A9BDC] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(58, 155, 220, 0.5);">
-                        <i data-feather="folder" class="mr-3"></i> GitHub Projects
+                <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box cyber-border">
+
+                    <h2 class="text-3xl font-bold mb-8 text-[#3A9BDC] font-['Fira_Code'] flex items-center">
+                        <i data-feather="folder" class="mr-3"></i> Projects
                     </h2>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Python Projects -->
-                        <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
-                            <div class="flex items-center mb-3">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-10 h-10 mr-3">
-                                <h3 class="text-xl font-bold text-[#3A9BDC]">Python Projects</h3>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                Contains mini-games and security tools. Some projects require PIP installation or specified imagery.
+
+                        <div class="project-card bg-gray-900 p-6 border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold text-[#3A9BDC] mb-3">Advanced Threat Monitoring Dashboard</h3>
+                            <p class="mb-4 text-gray-300">
+                                Built Splunk dashboards for real-time alerting, tracked unauthorized access attempts,
+                                tuned SIEM rules to reduce false positives and increase SOC visibility.
                             </p>
-                            <a href="https://github.com/DRA3V50/Python_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center">
-                                View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                            </a>
                         </div>
-                        
-                        <!-- SQL Projects -->
-                        <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
-                            <div class="flex items-center mb-3">
-                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mr-3">
-                                    <ellipse cx="32" cy="12" rx="20" ry="8" fill="#0064A5"/>
-                                    <rect x="12" y="12" width="40" height="40" fill="#0064A5"/>
-                                    <ellipse cx="32" cy="52" rx="20" ry="8" fill="#004477"/>
-                                    <text x="32" y="36" font-size="12" text-anchor="middle" fill="white" font-family="monospace">SQL</text>
-                                </svg>
-                                <h3 class="text-xl font-bold text-[#3A9BDC]">SQL Projects</h3>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                Secure blackmail/extortion reporting systems, evidence management, and database security best practices.
+
+                        <div class="project-card bg-gray-900 p-6 border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold text-[#3A9BDC] mb-3">Phishing & Social Engineering Defense</h3>
+                            <p class="mb-4 text-gray-300">
+                                Ran phishing simulations across teams, cutting click rates by 20% and improving reporting.
+                                Conducted analysis of spoofed communications and delivered SOC training.
                             </p>
-                            <a href="https://github.com/DRA3V50/SQL_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center">
-                                View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                            </a>
                         </div>
-                        
-                        <!-- C# Projects -->
-                        <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
-                            <div class="flex items-center mb-3">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-10 h-10 mr-3">
-                                <h3 class="text-xl font-bold text-[#3A9BDC]">C# Projects</h3>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                Cybersecurity tools, reverse engineering utilities, and red team concepts with practical examples.
+
+                        <div class="project-card bg-gray-900 p-6 border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold text-[#3A9BDC] mb-3">Azure Cloud Security Assessment</h3>
+                            <p class="mb-4 text-gray-300">
+                                Used Azure Sentinel SIEM/SOAR for cloud monitoring, automated incident response with
+                                playbooks, and strengthened cloud security posture.
                             </p>
-                            <a href="https://github.com/DRA3V50/C-Sharp_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center">
-                                View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                            </a>
                         </div>
-                        
-                        <!-- Ruby Projects -->
-                        <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
-                            <div class="flex items-center mb-3">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="Ruby" class="w-10 h-10 mr-3">
-                                <h3 class="text-xl font-bold text-[#3A9BDC]">Ruby Projects</h3>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                Requires Ruby extension in Visual Studio. Includes web security testing and automation scripts.
-                            </p>
-                            <a href="https://github.com/DRA3V50/Ruby_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center">
-                                View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Batch Projects -->
-                        <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
-                            <div class="flex items-center mb-3">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="w-10 h-10 mr-3">
-                                <h3 class="text-xl font-bold text-[#3A9BDC]">Batch Projects</h3>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                Copy code into text documents and save as .bat files. Includes various automation scripts.
-                            </p>
-                            <a href="https://github.com/DRA3V50/Batch_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center">
-                                View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- HTML/CSS Projects -->
-                        <div class="project-card bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-[#8A7CFF] transition-all">
-                            <div class="flex items-center mb-3">
-                                <div class="flex space-x-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-10 h-10">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-10 h-10">
-                                </div>
-                                <h3 class="text-xl font-bold text-[#3A9BDC]">HTML/CSS Projects</h3>
-                            </div>
-                            <p class="text-gray-300 mb-4">
-                                Simple HTML projects including games and UI components, requiring no installation.
-                            </p>
-                            <a href="https://github.com/DRA3V50/HTML_CSS_Projects" target="_blank" class="text-[#00FF88] hover:underline inline-flex items-center">
-                                View on GitHub <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                            </a>
-                        </div>
+
                     </div>
                 </div>
             </section>
 
-            <!-- Certifications Section -->
+            <!-- CERTIFICATIONS -->
             <section class="mb-20" data-aos="fade-up">
-                <div class="bg-black bg-opacity-70 backdrop-blur-sm rounded-xl p-8 cyber-border glow-box">
-                    <h2 class="text-3xl font-bold mb-8 text-[#00FF88] font-['Fira_Code'] flex items-center" style="text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);">
+                <div class="bg-black bg-opacity-70 p-8 rounded-xl glow-box cyber-border">
+
+                    <h2 class="text-3xl font-bold mb-8 text-[#00FF88] font-['Fira_Code'] flex items-center">
                         <i data-feather="award" class="mr-3"></i> Certifications
                     </h2>
+
                     <div class="space-y-6">
-                        <div class="certification-item border-b border-gray-800 pb-6">
-                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">DoD Cyber Sentinel</h3>
-                            <p class="text-[#00FF88]">Correlation One</p>
+                        <div class="border-b border-gray-800 pb-6">
+                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">SIEM Engineering</h3>
+                            <p class="text-[#00FF88]">LetsDefend</p>
                         </div>
-                        <div class="certification-item border-b border-gray-800 pb-6">
+
+                        <div class="border-b border-gray-800 pb-6">
+                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">DoD Cyber Sentinel Challenge</h3>
+                            <p class="text-[#00FF88]">OSINT, Forensics, Malware, Networking, Exploitation</p>
+                        </div>
+
+                        <div class="border-b border-gray-800 pb-6">
                             <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Ethical Hacking</h3>
                             <p class="text-[#00FF88]">Alison</p>
                         </div>
-                        <div class="certification-item border-b border-gray-800 pb-6">
-                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Introduction to Networking and Cloud Computing</h3>
+
+                        <div class="border-b border-gray-800 pb-6">
+                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Introduction to Networking & Cloud Computing</h3>
                             <p class="text-[#00FF88]">Microsoft</p>
                         </div>
-                        <div class="certification-item border-b border-gray-800 pb-6">
-                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Introduction To Operating Systems & Security</h3>
+
+                        <div class="border-b border-gray-800 pb-6">
+                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Introduction to Operating Systems & Security</h3>
                             <p class="text-[#00FF88]">Microsoft</p>
                         </div>
-                        <div class="certification-item border-b border-gray-800 pb-6">
+
+                        <div class="border-b border-gray-800 pb-6">
                             <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">ISO 27001</h3>
                             <p class="text-[#00FF88]">Udemy</p>
                         </div>
-                        <div class="certification-item">
-                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Zero Trust Security Certification</h3>
+
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-[#3A9BDC]">Zero Trust Security</h3>
                             <p class="text-[#00FF88]">Udemy</p>
                         </div>
+
                     </div>
                 </div>
             </section>
+
         </main>
 
-        <!-- Footer -->
+        <!-- FOOTER -->
         <footer class="py-8 text-center">
             <div class="max-w-4xl mx-auto px-4">
+
                 <div class="flex justify-center space-x-6 mb-4">
-                    <a href="https://github.com/DRA3V50" target="_blank" class="text-[#3A9BDC] hover:text-[#FF4500] transition-colors">
-                        <i data-feather="github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/danyarabo/" target="_blank" class="text-[#8A7CFF] hover:text-[#FF4500] transition-colors">
-                        <i data-feather="linkedin"></i>
-                    </a>
+                    <a href="https://github.com/DRA3V50" class="text-[#3A9BDC] hover:text-[#FF4500]"><i data-feather="github"></i></a>
+                    <a href="https://www.linkedin.com/in/danyarabo/" class="text-[#8A7CFF] hover:text-[#FF4500]"><i data-feather="linkedin"></i></a>
                 </div>
+
                 <div class="text-[#8A7CFF] text-sm mb-2">
-                    <i data-feather="phone" class="inline mr-1"></i> (248) 787-1837 | 
+                    <i data-feather="phone" class="inline mr-1"></i> (248) 787-1837 |
                     <i data-feather="mail" class="inline ml-2 mr-1"></i> arabodanny002@gmail.com
                 </div>
-                <p class="text-gray-500 text-sm">© 2023 Dany Arabo. All rights reserved.</p>
+
+                <p class="text-gray-500 text-sm">© 2025 Dany Arabo. All rights reserved.</p>
+
             </div>
         </footer>
+
     </div>
 
     <script>
-        // Initialize Vanta.js
-        VANTA.NET({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x8A7CFF,
-            backgroundColor: 0x0E0E0E,
-            points: 16.00,
-            maxDistance: 26.00,
-            spacing: 20.00
-        });
+        // Vanta.js
+        VANTA.NET({ el:"#vanta-bg", mouseControls:true, touchControls:true, gyroControls:false,
+            minHeight:200.00, minWidth:200.00, scale:1.00, scaleMobile:1.00,
+            color:0x8A7CFF, backgroundColor:0x0E0E0E, points:16.00, maxDistance:26.00, spacing:20.00 });
 
-        // Binary rain effect
+        // Binary Rain
         document.addEventListener('DOMContentLoaded', function() {
-            const binaryRain = document.getElementById('binary-rain');
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            
-            for (let i = 0; i < 100; i++) {
-                const digit = document.createElement('div');
-                digit.className = 'binary-digit';
-                digit.textContent = Math.random() > 0.5 ? '1' : '0';
-                digit.style.left = `${Math.random() * width}px`;
-                digit.style.top = `${Math.random() * height}px`;
-                digit.style.opacity = Math.random();
-                binaryRain.appendChild(digit);
-                
-                animateDigit(digit);
-            }
-            
-            function animateDigit(digit) {
-                let y = parseFloat(digit.style.top);
-                const speed = 1 + Math.random() * 3;
-                
-                function frame() {
-                    y += speed;
-                    digit.style.top = `${y}px`;
-                    
-                    if (y > height) {
-                        y = -20;
-                        digit.style.left = `${Math.random() * width}px`;
-                    }
-                    
-                    requestAnimationFrame(frame);
-                }
-                
-                frame();
-            }
+            const binaryRain=document.getElementById('binary-rain');
+            const width=window.innerWidth; const height=window.innerHeight;
+            for (let i=0;i<100;i++){ const digit=document.createElement('div'); digit.className='binary-digit';
+                digit.textContent=Math.random()>0.5?'1':'0'; digit.style.left=`${Math.random()*width}px`;
+                digit.style.top=`${Math.random()*height}px`; digit.style.opacity=Math.random(); binaryRain.appendChild(digit);
+                animateDigit(digit);}
+            function animateDigit(digit){ let y=parseFloat(digit.style.top); const speed=1+Math.random()*3;
+                function frame(){ y+=speed; digit.style.top=`${y}px`; if(y>height){ y=-20; digit.style.left=`${Math.random()*width}px`; }
+                    requestAnimationFrame(frame);} frame();}
         });
 
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
+        // AOS
+        AOS.init({ duration:800, easing:'ease-in-out', once:true });
 
-        // Initialize Feather Icons
         feather.replace();
     </script>
+
 </body>
 </html>
 

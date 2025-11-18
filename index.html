@@ -1,180 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dany Arabo - Cybersecurity Specialist</title>
-<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script src="https://unpkg.com/feather-icons"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus on SOC Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
 
-<style>
-.binary-rain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; opacity: 0.15; }
-.binary-digit { position: absolute; color: #ff0033; font-family: 'Fira Code', monospace; font-size: 14px; user-select: none; }
-.content-wrapper { position: relative; z-index: 10; }
-.glow-text { text-shadow: 0 0 10px rgba(255, 69, 0, 0.7); }
-
-@keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.animate-spin-slow { animation: spin-slow 20s linear infinite; }
-
-.glow-box { box-shadow: 0 0 15px rgba(255, 69, 0, 0.3); }
-.cyber-border { background: rgba(0, 0, 0, 0.7); position: relative; }
-
-.skill-badge { transition: all 0.3s ease; }
-.skill-badge:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(138, 124, 255, 0.2); }
-
-.social-btn { transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; }
-.social-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
-.github-btn { background-color: #8A7CFF; color: #0E0E0E; }
-.linkedin-btn { border: 2px solid #3A9BDC; color: #3A9BDC; }
-</style>
+        .binary-rain {
+            color: lime;
+            font-family: monospace;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
 </head>
 
-<body class="bg-[#0E0E0E] text-[#E0E0E0] font-['Inter'] min-h-screen">
+<body class="bg-black text-white">
 
-<!-- Binary Rain -->
-<div id="binary-rain" class="binary-rain"></div>
+    <!-- VANTA background container -->
+    <div id="vanta-bg" class="absolute w-full h-full top-0 left-0 z-0"></div>
 
-<!-- Vanta Background -->
-<div id="vanta-bg" class="fixed top-0 left-0 w-full h-full"></div>
+    <!-- Binary Rain -->
+    <canvas id="binary-rain" class="binary-rain"></canvas>
 
-<div class="content-wrapper relative">
-
-<!-- HEADER -->
-<header class="relative py-20 text-center px-4">
-<div class="max-w-4xl mx-auto">
-
-    <!-- Name -->
-    <div data-aos="fade-down" class="relative">
-        <div class="absolute -inset-4 bg-gradient-to-r from-[#8B0000] to-[#8A2BE2] rounded-full blur-lg opacity-20"></div>
-        <h1 class="text-5xl md:text-7xl font-bold relative z-10">
-            <span class="text-white font-mono tracking-wider" style="text-shadow: 0 0 10px rgba(255,0,0,0.7);">DANY ARABO</span>
+    <header class="relative z-10 p-6 flex justify-center">
+        <h1 class="text-4xl font-bold text-white text-center">
+            Focus on SOC Projects
         </h1>
-    </div>
+    </header>
 
-    <!-- UPDATED TITLE (ONE LINE) -->
-    <h2 class="text-lg md:text-xl mt-6 mb-4 font-['Fira_Code'] tracking-wider font-bold text-[#8A7CFF]" style="text-shadow: 0 0 8px rgba(138,124,255,0.7);" data-aos="fade-down" data-aos-delay="100">
-        CYBERSECURITY SPECIALIST | SOC OPERATIONS | INCIDENT RESPONSE | SECURITY SUPPORT
-    </h2>
+    <main class="relative z-10 p-6 space-y-12">
 
-    <!-- Buttons -->
-    <div class="flex justify-center space-x-4 mt-8" data-aos="fade-up" data-aos-delay="200">
-        <a href="https://github.com/DRA3V50" target="_blank" class="social-btn github-btn"> <i data-feather="github" class="mr-2"></i> GitHub </a>
-        <a href="https://www.linkedin.com/in/danyarabo/" target="_blank" class="social-btn linkedin-btn"> <i data-feather="linkedin" class="mr-2"></i> LinkedIn </a>
-    </div>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="space-y-4">
+            <h2 class="text-3xl font-semibold text-green-400">About Me</h2>
+            <p>Hello! I am a cybersecurity enthusiast focusing on SOC and security operations projects. I enjoy monitoring, detecting, and responding to threats using advanced tools and frameworks.</p>
+        </section>
 
-    <!-- Contact -->
-    <div class="mt-6 text-[#8A7CFF] font-mono" data-aos="fade-up" data-aos-delay="300">
-        <i data-feather="phone" class="inline mr-2"></i> (248) 787-1837 |
-        <i data-feather="mail" class="inline ml-2 mr-2"></i> arabodanny002@gmail.com
-    </div>
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="space-y-4">
+            <h2 class="text-3xl font-semibold text-green-400">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <span class="bg-gray-800 p-2 rounded text-center">SIEM</span>
+                <span class="bg-gray-800 p-2 rounded text-center">Splunk</span>
+                <span class="bg-gray-800 p-2 rounded text-center">Network Security</span>
+                <span class="bg-gray-800 p-2 rounded text-center">Incident Response</span>
+                <span class="bg-gray-800 p-2 rounded text-center">Python</span>
+                <span class="bg-gray-800 p-2 rounded text-center">Threat Hunting</span>
+                <span class="bg-gray-800 p-2 rounded text-center">SOC Tools</span>
+                <span class="bg-gray-800 p-2 rounded text-center">Malware Analysis</span>
+            </div>
+        </section>
 
-</div>
-</header>
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="space-y-4">
+            <h2 class="text-3xl font-semibold text-green-400">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 p-4 rounded shadow-lg">
+                    <h3 class="text-xl font-bold text-white">SOC Alert Dashboard</h3>
+                    <p>Developed a real-time dashboard for monitoring alerts and incidents using Splunk and Python scripts.</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded shadow-lg">
+                    <h3 class="text-xl font-bold text-white">Automated Threat Hunting</h3>
+                    <p>Created automated scripts to detect anomalies in network traffic for faster threat detection.</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded shadow-lg">
+                    <h3 class="text-xl font-bold text-white">Malware Sandbox</h3>
+                    <p>Built an isolated environment to safely analyze and report malicious binaries.</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded shadow-lg">
+                    <h3 class="text-xl font-bold text-white">Phishing Detection Tool</h3>
+                    <p>Implemented an ML-based tool to identify phishing emails and URLs automatically.</p>
+                </div>
+            </div>
+        </section>
 
-<!-- MAIN -->
-<main class="max-w-6xl mx-auto pb-20 px-4">
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="space-y-4">
+            <h2 class="text-3xl font-semibold text-green-400">Certifications</h2>
+            <ul class="list-disc list-inside space-y-1">
+                <li>CompTIA Security+</li>
+                <li>Certified SOC Analyst (CSA)</li>
+                <li>Splunk Core Certified User</li>
+                <li>EC-Council Certified Incident Handler</li>
+            </ul>
+        </section>
 
-<!-- ABOUT ME UPDATED TO MATCH RESUME -->
-<section class="mb-20" data-aos="fade-up">
-<div class="bg-black bg-opacity-70 p-8 rounded-xl cyber-border glow-box">
-<h2 class="text-3xl font-bold mb-6 text-[#00FF88] font-['Fira_Code'] flex items-center">
-    <i data-feather="user" class="mr-3"></i> About Me
-</h2>
+    </main>
 
-<p class="mb-4">
-I am a cybersecurity professional with hands-on experience in SOC operations, incident response, vulnerability management, and endpoint security. I have triaged alerts, investigated incidents, and implemented security controls across hybrid cloud environments including Azure and AWS. I specialize in SIEM tools, Splunk, Azure Sentinel, CrowdStrike, Nessus, and threat intelligence analysis.
-</p>
+    <!-- FOOTER -->
+    <footer class="relative z-10 p-6 text-center text-gray-400">
+        &copy; 2025 SOC Portfolio
+    </footer>
 
-<ul class="list-disc pl-6 space-y-2">
-<li>Reduced incident response times and improved SOC efficiency</li>
-<li>Strengthened security posture through detection rule tuning</li>
-<li>Experience across Azure, AWS, hybrid enterprise environments</li>
-</ul>
+    <script>
+        // VANTA NET effect
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x00ff00,
+            backgroundColor: 0x000000
+        });
 
-</div>
-</section>
+        // Binary rain effect
+        const canvas = document.getElementById('binary-rain');
+        const ctx = canvas.getContext('2d');
 
-<!-- SKILLS (unchanged) -->
-<!-- [content preserved exactly as provided] -->
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-<!-- PROJECTS (YOUR ORIGINAL VERSION WITH ICONS) -->
-<!-- [content preserved exactly as provided; unchanged] -->
+        const binary = "01";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = [];
 
-<!-- CERTIFICATIONS (unchanged) -->
-<!-- [content preserved exactly as provided] -->
+        for (let x = 0; x < columns; x++) drops[x] = 1;
 
-</main>
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-<!-- FOOTER -->
-<footer class="py-8 text-center">
-<div class="max-w-4xl mx-auto px-4">
-    <div class="flex justify-center space-x-6 mb-4">
-        <a href="https://github.com/DRA3V50" target="_blank" class="text-[#3A9BDC] hover:text-[#FF4500]"><i data-feather="github"></i></a>
-        <a href="https://www.linkedin.com/in/danyarabo/" target="_blank" class="text-[#8A7CFF] hover:text-[#FF4500]"><i data-feather="linkedin"></i></a>
-    </div>
+            ctx.fillStyle = "#00ff00";
+            ctx.font = fontSize + "px monospace";
 
-    <div class="text-[#8A7CFF] text-sm mb-2">
-        <i data-feather="phone" class="inline mr-1"></i> (248) 787-1837 |
-        <i data-feather="mail" class="inline ml-2 mr-1"></i> arabodanny002@gmail.com
-    </div>
+            for (let i = 0; i < drops.length; i++) {
+                const text = binary[Math.floor(Math.random() * binary.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    <p class="text-gray-500 text-sm">© 2025 Dany Arabo. All rights reserved.</p>
-</div>
-</footer>
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
 
-</div>
-
-<script>
-// Vanta
-VANTA.NET({
-el:"#vanta-bg",mouseControls:true,touchControls:true,gyroControls:false,
-color:0x8A7CFF,backgroundColor:0x0E0E0E,points:16,maxDistance:26,spacing:20
-});
-
-// Binary Rain
-document.addEventListener('DOMContentLoaded',function(){
-const binaryRain=document.getElementById('binary-rain');
-const width=window.innerWidth;const height=window.innerHeight;
-
-for(let i=0;i<100;i++){
-const digit=document.createElement('div');
-digit.className='binary-digit';
-digit.textContent=Math.random()>0.5?'1':'0';
-digit.style.left=`${Math.random()*width}px`;
-digit.style.top=`${Math.random()*height}px`;
-digit.style.opacity=Math.random();
-binaryRain.appendChild(digit);
-animateDigit(digit);
-}
-
-function animateDigit(digit){
-let y=parseFloat(digit.style.top);
-const speed=1+Math.random()*3;
-function frame(){
-y+=speed;digit.style.top=`${y}px`;
-if(y>height){y=-20;digit.style.left=`${Math.random()*width}px`;}
-requestAnimationFrame(frame);
-}
-frame();
-}
-});
-
-// AOS
-AOS.init({ duration:800, easing:'ease-in-out', once:true });
-
-// Feather Icons
-feather.replace();
-</script>
+        setInterval(draw, 50);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 
 </body>
+
 </html>
